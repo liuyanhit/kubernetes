@@ -75,7 +75,6 @@
 				"k8s.io/kubernetes/pkg/serviceaccount",
 				"k8s.io/kubernetes/pkg/util/async",
 				"k8s.io/kubernetes/pkg/util/conntrack",
-				"k8s.io/kubernetes/pkg/util/dbus",
 				"k8s.io/kubernetes/pkg/util/hash",
 				"k8s.io/kubernetes/pkg/util/iptables",
 				"k8s.io/kubernetes/pkg/util/metrics",
@@ -174,13 +173,7 @@
 				"golang.org/x/text/unicode/bidi",
 				"golang.org/x/text/unicode/norm",
 				"golang.org/x/text/width",
-				"golang.org/x/time/rate"
-			]
-		},
-		{
-			"SelectorRegexp": "google[.]golang[.]org",
-			"AllowedPrefixes": [
-				"google.golang.org/genproto/googleapis/rpc/status",
+				"golang.org/x/time/rate",
 				"google.golang.org/grpc"
 			]
 		},

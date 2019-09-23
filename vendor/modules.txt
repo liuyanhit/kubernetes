@@ -275,7 +275,7 @@ github.com/coreos/etcd/store
 github.com/coreos/etcd/version
 github.com/coreos/etcd/wal
 github.com/coreos/etcd/wal/walpb
-# github.com/coreos/go-oidc v0.0.0-20180117170138-065b426bd416 => github.com/coreos/go-oidc v0.0.0-20180117170138-065b426bd416
+# github.com/coreos/go-oidc v2.1.0+incompatible => github.com/coreos/go-oidc v2.1.0+incompatible
 github.com/coreos/go-oidc
 # github.com/coreos/go-semver v0.3.0 => github.com/coreos/go-semver v0.3.0
 github.com/coreos/go-semver/semver
@@ -435,7 +435,7 @@ github.com/golang/protobuf/ptypes/timestamp
 github.com/golang/protobuf/ptypes/wrappers
 # github.com/google/btree v0.0.0-20180813153112-4030bb1f1f0c => github.com/google/btree v0.0.0-20180813153112-4030bb1f1f0c
 github.com/google/btree
-# github.com/google/cadvisor v0.33.2-0.20190719172907-9fa3b1429966 => github.com/google/cadvisor v0.33.2-0.20190719172907-9fa3b1429966
+# github.com/google/cadvisor v0.34.0 => github.com/google/cadvisor v0.34.0
 github.com/google/cadvisor/accelerators
 github.com/google/cadvisor/cache/memory
 github.com/google/cadvisor/client/v2
@@ -558,7 +558,7 @@ github.com/hashicorp/hcl/hcl/token
 github.com/hashicorp/hcl/json/parser
 github.com/hashicorp/hcl/json/scanner
 github.com/hashicorp/hcl/json/token
-# github.com/heketi/heketi v9.0.0+incompatible => github.com/heketi/heketi v9.0.0+incompatible
+# github.com/heketi/heketi v9.0.1-0.20190917153846-c2e2a4ab7ab9+incompatible => github.com/heketi/heketi v9.0.1-0.20190917153846-c2e2a4ab7ab9+incompatible
 github.com/heketi/heketi/client/api/go-client
 github.com/heketi/heketi/pkg/glusterfs/api
 github.com/heketi/heketi/pkg/utils
@@ -610,7 +610,7 @@ github.com/mattn/go-shellwords
 github.com/matttproud/golang_protobuf_extensions/pbutil
 # github.com/miekg/dns v1.1.4 => github.com/miekg/dns v1.1.4
 github.com/miekg/dns
-# github.com/mindprince/gonvml v0.0.0-20171110221305-fee913ce8fb2 => github.com/mindprince/gonvml v0.0.0-20171110221305-fee913ce8fb2
+# github.com/mindprince/gonvml v0.0.0-20190828220739-9ebdce4bb989 => github.com/mindprince/gonvml v0.0.0-20190828220739-9ebdce4bb989
 github.com/mindprince/gonvml
 # github.com/mistifyio/go-zfs v2.1.1+incompatible => github.com/mistifyio/go-zfs v2.1.1+incompatible
 github.com/mistifyio/go-zfs
@@ -1127,6 +1127,7 @@ k8s.io/api/certificates/v1beta1
 k8s.io/api/coordination/v1
 k8s.io/api/coordination/v1beta1
 k8s.io/api/core/v1
+k8s.io/api/discovery/v1alpha1
 k8s.io/api/events/v1beta1
 k8s.io/api/extensions/v1beta1
 k8s.io/api/imagepolicy/v1alpha1
@@ -1211,6 +1212,7 @@ k8s.io/apimachinery/pkg/api/validation
 k8s.io/apimachinery/pkg/api/validation/path
 k8s.io/apimachinery/pkg/apis/meta/fuzzer
 k8s.io/apimachinery/pkg/apis/meta/internalversion
+k8s.io/apimachinery/pkg/apis/meta/internalversion/scheme
 k8s.io/apimachinery/pkg/apis/meta/v1
 k8s.io/apimachinery/pkg/apis/meta/v1/unstructured
 k8s.io/apimachinery/pkg/apis/meta/v1/unstructured/unstructuredscheme
@@ -1432,6 +1434,8 @@ k8s.io/client-go/informers/coordination/v1
 k8s.io/client-go/informers/coordination/v1beta1
 k8s.io/client-go/informers/core
 k8s.io/client-go/informers/core/v1
+k8s.io/client-go/informers/discovery
+k8s.io/client-go/informers/discovery/v1alpha1
 k8s.io/client-go/informers/events
 k8s.io/client-go/informers/events/v1beta1
 k8s.io/client-go/informers/extensions
@@ -1502,6 +1506,8 @@ k8s.io/client-go/kubernetes/typed/coordination/v1beta1
 k8s.io/client-go/kubernetes/typed/coordination/v1beta1/fake
 k8s.io/client-go/kubernetes/typed/core/v1
 k8s.io/client-go/kubernetes/typed/core/v1/fake
+k8s.io/client-go/kubernetes/typed/discovery/v1alpha1
+k8s.io/client-go/kubernetes/typed/discovery/v1alpha1/fake
 k8s.io/client-go/kubernetes/typed/events/v1beta1
 k8s.io/client-go/kubernetes/typed/events/v1beta1/fake
 k8s.io/client-go/kubernetes/typed/extensions/v1beta1
@@ -1552,6 +1558,7 @@ k8s.io/client-go/listers/certificates/v1beta1
 k8s.io/client-go/listers/coordination/v1
 k8s.io/client-go/listers/coordination/v1beta1
 k8s.io/client-go/listers/core/v1
+k8s.io/client-go/listers/discovery/v1alpha1
 k8s.io/client-go/listers/events/v1beta1
 k8s.io/client-go/listers/extensions/v1beta1
 k8s.io/client-go/listers/networking/v1
@@ -1662,8 +1669,10 @@ k8s.io/component-base/metrics/legacyregistry
 k8s.io/component-base/metrics/prometheus/clientgo
 k8s.io/component-base/metrics/prometheus/clientgo/leaderelection
 k8s.io/component-base/metrics/prometheus/restclient
+k8s.io/component-base/metrics/prometheus/version
 k8s.io/component-base/metrics/prometheus/workqueue
 k8s.io/component-base/version
+k8s.io/component-base/version/verflag
 # k8s.io/cri-api v0.0.0 => ./staging/src/k8s.io/cri-api
 k8s.io/cri-api/pkg/apis
 k8s.io/cri-api/pkg/apis/runtime/v1alpha2
@@ -1717,7 +1726,7 @@ k8s.io/kube-aggregator/pkg/registry/apiservice/etcd
 k8s.io/kube-aggregator/pkg/registry/apiservice/rest
 # k8s.io/kube-controller-manager v0.0.0 => ./staging/src/k8s.io/kube-controller-manager
 k8s.io/kube-controller-manager/config/v1alpha1
-# k8s.io/kube-openapi v0.0.0-20190709113604-33be087ad058 => k8s.io/kube-openapi v0.0.0-20190709113604-33be087ad058
+# k8s.io/kube-openapi v0.0.0-20190816220812-743ec37842bf => k8s.io/kube-openapi v0.0.0-20190816220812-743ec37842bf
 k8s.io/kube-openapi/cmd/openapi-gen
 k8s.io/kube-openapi/cmd/openapi-gen/args
 k8s.io/kube-openapi/pkg/aggregator
@@ -1748,7 +1757,6 @@ k8s.io/kubectl/pkg/cmd/certificates
 k8s.io/kubectl/pkg/cmd/clusterinfo
 k8s.io/kubectl/pkg/cmd/completion
 k8s.io/kubectl/pkg/cmd/config
-k8s.io/kubectl/pkg/cmd/cp
 k8s.io/kubectl/pkg/cmd/create
 k8s.io/kubectl/pkg/cmd/delete
 k8s.io/kubectl/pkg/cmd/describe
@@ -1817,7 +1825,6 @@ k8s.io/kubectl/pkg/util/storage
 k8s.io/kubectl/pkg/util/templates
 k8s.io/kubectl/pkg/util/term
 k8s.io/kubectl/pkg/validation
-k8s.io/kubectl/pkg/version
 # k8s.io/kubelet v0.0.0 => ./staging/src/k8s.io/kubelet
 k8s.io/kubelet/config/v1beta1
 # k8s.io/legacy-cloud-providers v0.0.0 => ./staging/src/k8s.io/legacy-cloud-providers
@@ -1825,6 +1832,8 @@ k8s.io/legacy-cloud-providers/aws
 k8s.io/legacy-cloud-providers/azure
 k8s.io/legacy-cloud-providers/azure/auth
 k8s.io/legacy-cloud-providers/gce
+k8s.io/legacy-cloud-providers/openstack
+k8s.io/legacy-cloud-providers/openstack/util/mount
 k8s.io/legacy-cloud-providers/vsphere
 k8s.io/legacy-cloud-providers/vsphere/testing
 k8s.io/legacy-cloud-providers/vsphere/vclib

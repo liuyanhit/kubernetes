@@ -72,7 +72,7 @@ func NewNamespaceController(
 	// create the controller so we can inject the enqueue function
 	namespaceController := &NamespaceController{
 		queue:                      workqueue.NewNamedRateLimitingQueue(workqueue.DefaultControllerRateLimiter(), "namespace"),
-		namespacedResourcesDeleter: deletion.NewNamespacedResourcesDeleter(kubeClient.CoreV1().Namespaces(), metadataClient, kubeClient.CoreV1(), discoverResourcesFn, finalizerToken, true),
+		namespacedResourcesDeleter: deletion.NewNamespacedResourcesDeleter(kubeClient.CoreV1().Namespaces(), metadataClient, kubeClient.CoreV1(), discoverResourcesFn, finalizerToken),
 	}
 
 	if kubeClient != nil && kubeClient.CoreV1().RESTClient().GetRateLimiter() != nil {
@@ -145,7 +145,7 @@ func (nm *NamespaceController) worker() {
 		} else {
 			// rather than wait for a full resync, re-add the namespace to the queue to be processed
 			nm.queue.AddRateLimited(key)
-			utilruntime.HandleError(err)
+			utilruntime.HandleError(fmt.Errorf("deletion of namespace %v failed: %v", key, err))
 		}
 		return false
 	}

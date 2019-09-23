@@ -20,6 +20,7 @@ require (
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.3
 	github.com/stretchr/testify v1.3.0
+	google.golang.org/grpc v1.23.0
 	gopkg.in/yaml.v2 v2.2.2
 	k8s.io/api v0.0.0
 	k8s.io/apimachinery v0.0.0
@@ -28,7 +29,7 @@ require (
 	k8s.io/code-generator v0.0.0
 	k8s.io/component-base v0.0.0
 	k8s.io/klog v0.4.0
-	k8s.io/kube-openapi v0.0.0-20190709113604-33be087ad058
+	k8s.io/kube-openapi v0.0.0-20190816220812-743ec37842bf
 	k8s.io/utils v0.0.0-20190801114015-581e00157fb1
 	sigs.k8s.io/yaml v1.1.0
 )
